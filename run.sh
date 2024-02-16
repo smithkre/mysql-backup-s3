@@ -7,7 +7,6 @@ if [ "${MODE}" = "mysql" ]; then
     sh backup_mysql.sh
   else
     date
-    chmod +x /backup_mysql.sh
     echo "${SCHEDULE} /bin/sh /backup_mysql.sh >> /var/log/cron.log 2>&1" > /etc/crontabs/root
     crond -f -l 8
   fi
@@ -16,7 +15,6 @@ elif [ "${MODE}" = "postgres" ]; then
     sh backup_postgres.sh
   else
     date
-    chmod +x /backup_postgres.sh
     echo "${SCHEDULE} /bin/sh /backup_postgres.sh >> /var/log/cron.log 2>&1" > /etc/crontabs/root
     crond -f -l 8
   fi
@@ -25,7 +23,6 @@ else
     sh backup_file.sh
   else
     date
-    chmod +x /backup_file.sh
     echo "${SCHEDULE} /bin/sh /backup_file.sh >> /var/log/cron.log 2>&1" > /etc/crontabs/root
     crond -f -l 8
   fi

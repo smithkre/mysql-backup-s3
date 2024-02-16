@@ -10,5 +10,5 @@ export AWS_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY
 export AWS_DEFAULT_REGION=$S3_REGION
 
 for folder in $FOLDER; do
-    aws s3 sync $folder s3://$S3_BUCKET/$folder --endpoint-url $S3_ENDPOINT
+    aws s3 sync /$folder s3://$S3_BUCKET/$folder --endpoint-url $S3_ENDPOINT
 done

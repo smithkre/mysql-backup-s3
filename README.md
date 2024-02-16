@@ -1,0 +1,33 @@
+# backup-s3
+
+Backup Data to S3 (supports periodic backups)
+
+## Basic Usage
+
+```
+S3_ACCESS_KEY_ID:
+S3_SECRET_ACCESS_KEY:
+S3_BUCKET:
+S3_REGION: sgp
+S3_ENDPOINT:
+
+MODE mysql | file | postgres
+
+POSTGRES_DATABASE:
+POSTGRES_HOST:
+POSTGRES_PORT:
+POSTGRES_USER:
+POSTGRES_PASSWORD:
+POSTGRES_EXTRA_OPTS:
+
+MYSQL_HOST:
+MYSQL_USER:
+MYSQL_PASSWORD:
+
+DATABASE_NAME:
+
+FOLDER:
+
+SCHEDULE **None**
+
+```

@@ -25,7 +25,7 @@ POSTGRES_HOST_OPTS="-h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTG
 
 for db in $DATABASE_NAME; do
     echo "Dumping database: $db"
-    pg_dump $POSTGRES_HOST_OPTS $db > "${backup_dir}/${db}.sql"
+    pg_dump $POSTGRES_HOST_OPTS --dbname=$db --column-inserts > "${backup_dir}/${db}.sql"
     tar -czvf "${backup_dir}/${db}.sql.tar.gz" -C "${backup_dir}" "${db}.sql"
     aws s3 cp "${backup_dir}/${db}.sql.tar.gz" s3://$S3_BUCKET/${today}-${db}.sql.tar.gz --endpoint-url $S3_ENDPOINT
 done
